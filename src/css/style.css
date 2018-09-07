@@ -1,0 +1,973 @@
+@font-face {
+    font-family: AvenirBook;
+    src: url('./font-family/Avenir-Book/Avenir-Book-01.ttf');
+}
+
+@font-face {
+    font-family: SignPainter;
+    src: url('./font-family/SignPainter/SignPainter.otf');
+}
+
+body section h1 {
+    font-size: 3em;
+}
+
+body .content p {
+    font-size: 1.5em;
+}
+
+body .content h2 {
+    font-size: 1.9em;
+}
+
+body #hebergement article h2 {
+    font-size: 1.5em;
+}
+
+body #hebergement article p {
+    font-size: 1.1em;
+}
+
+body #contact .content p, body #contact ul li, body #sjc .content p, body #sjc ul li {
+    font-size: 1.1em;
+}
+
+body #reponse article input[type="button"] {
+    font-size: 1.1em;
+}
+
+#loader {
+    width: 50%;
+}
+
+#root {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+  }
+
+nav {
+    position:fixed;
+    left: -260px;
+    top: 0;
+    width:350px;
+    background-color:rgba(0,0,0,0.5);
+    height:100%;
+    z-index:100;
+    transition-property: left, background-color;
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    font-size: 16px;
+    text-align: right;
+    font-family: SignPainter;
+}
+
+nav.ready {
+    left: -260px;
+}
+
+nav:hover {
+   transition-property: left, background-color;
+   transition-duration: 0.4s;
+   transition-timing-function: ease-in;
+   transition-delay: 0s;
+   left: 0px;
+   background-color:rgba(0,0,0,0.7);
+}
+
+nav img {
+    width: 12%;
+    vertical-align: middle;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+nav a {
+    color: white;
+    font-size: 1.9em;
+    text-decoration: none;
+}
+
+.ui-page-theme-a nav a:visited, html .ui-bar-a nav a:visited, html .ui-body-a nav a:visited, html body .ui-group-theme-a nav a:visited {
+    color: white;
+}
+
+html body nav ul li a:hover, html body nav ul li a.selected, html body .ui-page-theme-a nav ul li a.selected {
+    color: rgb(89,89,89);
+}
+
+
+nav ul li {
+    margin-top: 13%;
+}
+
+nav span.img_nav {
+    width: 40px;
+    height: 55px;
+    vertical-align: middle;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: inline-block;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+nav .menu-selected-mobile {
+    display: none;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+nav .icon {
+    display: none;
+}
+
+#user_img {
+    background-image: url('./images/icons/user.png');
+    background-position: center top;
+}
+
+.selected #user_img, nav ul li a:hover #user_img {
+    background-image: url('./images/icons/user_select.png');
+}
+
+#jourj_img {
+    background-image: url('./images/icons/jourj.png');
+}
+
+.selected #jourj_img, nav ul li a:hover #jourj_img {
+    background-image: url('./images/icons/jourj_select.png');
+}
+
+#invitation_img {
+    background-image: url('./images/icons/invitation.png');
+}
+
+.selected #invitation_img, nav ul li a:hover #invitation_img {
+    background-image: url('./images/icons/invitation_select.png');
+}
+
+#hebergement_img {
+    background-image: url('./images/icons/hebergement.png');
+}
+
+.selected #hebergement_img, nav ul li a:hover #hebergement_img {
+    background-image: url('./images/icons/hebergement_select.png');
+}
+
+#photo_img {
+    background-image: url('./images/icons/photo.png');
+}
+
+.selected #photo_img, nav ul li a:hover #photo_img {
+    background-image: url('./images/icons/photo_select.png');
+}
+
+#SJC_img {
+    background-image: url('./images/icons/sjc.png');
+}
+
+.selected #SJC_img, nav ul li a:hover #SJC_img {
+    background-image: url('./images/icons/sjc_select.png');
+}
+
+#phone_img {
+    background-image: url('./images/icons/phone.png');
+    background-position: center top;
+    height: 70px;
+}
+
+.selected #phone_img, nav ul li a:hover #phone_img {
+    background-image: url('./images/icons/phone_select.png');
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    font-size: calc(16px + 0.5vw);
+    font-family: AvenirBook;
+    background-position: center center;
+    overflow: hidden;
+}
+
+section .slider {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+section .slider-nav {
+    position: absolute;
+    bottom: 5%;
+    z-index: 99;
+    width: 100%;
+    height: 5%;
+    text-align: center;
+}
+
+section .slider-nav .bubble {
+    width: 20px;
+    height: 20px;
+    background-image: url('./images/icons/bubble.png');
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-size: 100%;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+section .slider-nav .bubble-selected, section .slider-nav .bubble:hover {
+    background-image: url('./images/icons/bubble-selected.png');
+}
+
+section h1 {
+    position: relative;
+    margin: auto;
+    padding-top: 2%;
+    font-size: 3.9em;
+    width: auto;
+    text-align: center;
+    z-index:99;
+    font-family: SignPainter;
+    color: black;
+}
+
+#profile {
+    background-image: url('./images/login.jpg');
+}
+
+#profile article h2 {
+    margin-bottom: 3%;
+    color: rgb(51, 51, 51);
+}
+
+#profile article {
+    margin: auto;
+    position: relative;
+    margin-top: 15%;
+    width: 50%;
+    background-color: rgba(255,225,255,0.5);
+    height: 50vh;
+}
+
+#profile article .content {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#profile #login-wrapper {
+    top: 6%
+}
+
+#profile #waiting {
+    top: 15%;
+}
+
+#profile input, #profile button {
+    width: 80%;
+    font-size: 1em;
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+}
+
+#profile button[type="button"], #profile input[type="submit"] {
+    background-color: black;
+    color: white;
+    width: 50%;
+    font-size: 0.9em;
+    border-radius: 3px;
+}
+
+#profile .error-login, #reponse article .content p.error-guests {
+    color: rgb(234,86,43);
+    font-size: 1.2em;
+}
+
+.load-bar {
+    position: relative;
+    margin-top: -24px;
+    width: 100%;
+    height: 6px;
+    background-color: none;
+  }
+  .bar {
+    content: "";
+    display: inline;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0%;
+    text-align: center;
+  }
+  .bar:nth-child(1) {
+    background-color: #cccccc;
+    animation: loading 1s ease infinite;
+  }
+  
+  @keyframes loading {
+      from {width: 0;}
+      50% {width: 100%;}
+      to {width: 0%;}
+  }
+
+#le-jour-j article {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    color: black;
+    vertical-align: top;
+    background-position: center center;
+}
+
+.wrapper-content, .wrapper-title {
+    width: 1350px;
+    margin-left: 90px;
+}
+
+#le-jour-j article .content {
+    position: relative;
+    margin: auto;
+    margin-top: 13%;
+    width: 65%;
+    height: 50%;
+    padding: 1%;
+    background-color: rgba(127,127,127,0.4);
+    border: 1px solid black;
+}
+
+#union {
+    background-image: url('./images/union.jpg');
+}
+
+#le-jour-j #union .content {
+    background-color: rgba(212,207,200, 0.4);
+}
+
+#le-jour-j #union .content h2 {
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+#union h2 img {
+    vertical-align: middle;
+    width: 25%;
+    margin-right: 16%;
+    margin-left: -16%;
+}
+
+#ceremonie {
+    background-image: url('./images/ceremonie.jpg');
+}
+
+#le-jour-j #ceremonie .content {
+    background-color: rgba(255,255,255, 0.4);
+}
+
+#vin-honneur {
+    background-image: url('./images/vin_honneur.jpg');
+}
+
+#le-jour-j #vin-honneur .content {
+    background-color: rgba(141,125,100, 0.4);
+}
+
+#sport {
+    background-image: url('./images/sport.jpg');
+}
+
+#le-jour-j #sport .content {
+    background-color: rgba(235,230,225, 0.4);
+}
+
+#diner {
+    background-image: url('./images/diner.jpg');
+}
+
+#le-jour-j #diner .content {
+    background-color: rgba(255,255,255, 0.4);
+}
+
+#danse {
+    background-image: url('./images/danse.jpg');
+}
+
+#le-jour-j #danse .content {
+    background-color: rgba(255,255,255, 0.4);
+}
+
+#brunch {
+    background-image: url('./images/brunch.jpg');
+}
+
+#le-jour-j #brunch .content {
+    background-color: rgba(250,244,244, 0.4);
+}
+
+#le-jour-j #arrow {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    top: 50%;
+    opacity: 0.9;
+}
+
+#le-jour-j #arrow img {
+    width: 2%;
+    cursor: pointer;
+}
+
+#le-jour-j #arrow #arrowLeft {
+    position: absolute;
+    left: 18%;
+}
+
+#le-jour-j #arrow #arrowRight {
+    position: absolute;
+    right: 12%;
+}
+
+.content p {
+    font-size: 1.9em;
+    text-align: center;
+    line-height: 2em;
+}
+.content h2 {
+    font-size: 2.7em;
+    text-align: center;
+    margin-bottom: 7%;
+    margin-top: 5%;
+}
+
+#reponse {
+    background-image: url('./images/invitation.jpg');
+    background-position: center center;
+    color: black;
+}
+
+#reponse h1 {
+    color: black;
+}
+
+#reponse form {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 80%;
+    margin-top: 3%;
+    overflow:hidden;
+}
+
+#reponse form .slider-form {
+    width: 100%;
+    position: absolute;
+}
+
+#reponse form article {
+    display: inline-block;  
+    position: absolute;
+    margin: auto;
+    width: 100%;
+}
+
+#reponse article .content {
+    position: relative;
+    width: 75%;
+    margin: auto;
+    height: 540px;
+}
+
+#reponse article .content p {
+    text-align: left;
+    font-size: 1.4em;
+}
+
+#reponse div.yesOrNo {
+    margin-bottom: 10%;
+    display: table;
+}
+
+#reponse div.yesOrNo input, #reponse div.yesOrNo input {
+    vertical-align: middle;
+    margin-right: 10%;
+}
+
+#reponse input[type="email"], #reponse input[type="text"] {
+    width: 100%;
+    border: 0px;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    font-size: 1em;
+    color: black;
+}
+#reponse #guestName {
+    width: 75%;
+}
+
+#reponse .photo {
+    margin-bottom: 5%;
+}
+
+#reponse article#firstPart .beforeBtn {
+    border-top: 1px solid black;
+    margin-top: 5px;
+    width: 100%;
+}
+
+#reponse article .btn {
+    width: auto;
+    text-align: center; 
+}
+
+#reponse article button[type="button"], #reponse article input[type="button"], #photo button{
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.5); 
+    color: white;
+    width: 170px;
+    font-size: 1.1em;
+    padding-top: 7px;
+    padding-bottom: 7px;  
+    border-radius: 3px;
+}
+
+#reponse article button[name="addName"] {
+    font-size: 0.75em;
+}
+
+#reponse article button[type="button"]:hover {
+    background-color: rgba(0,0,0,0.7); 
+}
+
+#reponse #secondPart .inputName input[type="button"] {
+    font-size: 0.8em;
+}
+
+#reponse #secondPart .inputName {
+    margin-bottom: 2%;
+}
+
+#reponse #secondPart .inputName p.add {
+    text-align: center;
+}
+
+#reponse #secondPart .tableName {
+    border: 1px solid black;
+    padding: 1%;
+    font-size: 0.7em;
+    width: 50%;
+    height: 150px;
+    background-color: rgba(0,0,0,0.1);
+    margin-bottom: 2%;
+    color: black;
+    overflow: scroll;
+}
+
+#reponse #secondPart .tableName span {
+    display: inline-block;
+}
+
+#reponse #secondPart .tableName span.name {
+    width: 90%;
+    margin-left: 3%;
+}
+
+#reponse #secondPart .delete {
+    background-image: url('./images/corbeille_fermee.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 27px;
+}
+
+#reponse #secondPart .delete:hover {
+    background-image: url('./images/corbeille_ouverte.png');
+}
+
+#reponse #secondPart p.choixHebergement {
+    text-align: center;
+}
+
+#reponse #secondPart p.choixHebergement input {
+    margin-right: 10%;
+}
+
+
+#reponse #secondPart .btn {
+    margin: auto;
+}
+
+#reponse #lastPart .content p {
+    line-height: 1.5em;
+}
+
+#reponse #lastPart textarea {
+    padding: 0.5%;
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.1);
+    width: 100%;
+    height: 100px;
+    color: black;
+    font-size: 0.8em;
+}
+
+#reponse #lastPart textarea#allergies {
+    margin-bottom: 5%;
+}
+
+#reponse .answer .content {
+    width: 75%;
+}
+#reponse .answer p {
+    margin-top: 15%;
+}
+
+#hebergement {
+    background-image: url('./images/hebergement.jpg');
+    background-size: 100%;
+    color: white;
+}
+
+#hebergement h1 {
+    color: white;
+}
+
+#hebergement article {
+    width: 80%;
+    margin: auto;
+    height: 18%;
+    margin-left: 12%;
+    margin-bottom: 2%;
+    background-color: rgba(37,71,110, 0.4);
+    border: 1px solid white;
+    padding: 1%;
+    padding-left: 2%;
+}
+
+#hebergement #chalet {
+    margin-top: 5%;
+}
+
+#hebergement article h2 {
+    font-size: 1.9em;
+    font-style: italic;
+}
+
+#hebergement article p {
+    font-size: 1.6em;
+}
+
+#hebergement article .content {
+    clear: both;
+    margin-top: 1%;
+}
+
+#hebergement article .content p.left {
+    float: left;
+    margin-left: 5%;
+}
+
+#hebergement article .content p.right {
+    float: right;
+    margin-right: 1%;
+}
+
+#photo {
+    background-image: url('./images/photo.jpg');
+    background-size: 105%;
+    background-position: right top;
+}
+
+#photo .content {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+#photo button, #photo input[type=file] {
+    font-size: 0.7em;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+  
+#photo .btn {
+    /* border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;*/
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.5); 
+    color: white;
+    padding-top: 7px;
+    padding-bottom: 7px;  
+    border-radius: 3px;
+}
+
+#photo .content .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+#photo #uploadPhoto p.inputs {
+    text-align: left;
+}
+
+#photo span.little {
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+#photo #downloadPhoto {
+    margin-top: 5%;
+    right: 2%;
+    width: 50%;
+    position: absolute;
+}
+
+#sjc {
+    background-image: url('./images/SJC.jpg');
+    background-size: 100% 100%;
+}
+
+#sjc .content.left {
+    background-color: rgba(0,0,0,0.6);
+    border: 1px solid black;
+    padding-left: 1%;
+    height: 49.4vh;
+    width: 35%;
+    margin-left: 7%;
+}
+
+#sjc .content-wrapper {
+    display: table;
+}
+
+#sjc .content {
+    width: 47%;
+    margin-left: 2%;
+    float: left;
+    margin-top: 10%;
+}
+
+#sjc #map {
+    height: 49.3vh;
+}
+
+#sjc h1, #sjc p, #sjc ul li{
+    color: white;
+}
+
+#sjc .arrowRight {
+    width: 8%;
+    vertical-align: middle;
+}
+
+#sjc span.forAlignment {
+    display: inline-block;
+    width: 31%;
+    text-align: right;
+    margin-right: 3%;
+}
+
+#contact {
+    background-image: url('./images/contact.jpg');
+    background-size: 100% 100%;
+    color: rgb(51,51,51);
+}
+
+#contact article {
+    float: left;
+}
+
+#contact h2 {
+    font-family: SignPainter;
+    font-size: 1.3em;
+}
+
+#contact article#todoList {
+    width: 9%;
+    margin-left: 23%;
+    margin-top: 42%;
+    transform: rotate(2deg);
+}
+
+#contact article#images {
+    width: 9%;
+    margin-left: 0.75%;
+    text-align: center;
+    margin-top: 43.5%;
+}
+
+#contact article#images img {
+    width: 50%;
+    margin-bottom: 20%;
+}
+
+#contact article#todoList ul {
+    font-size: 0.8em;
+    line-height: 0.9em;
+    margin-top: 5%;
+    list-style: inside;
+}
+
+#contact article#todoList ul li.striked {
+    text-decoration: line-through;
+}
+
+#contact article#coordonnees {
+    width: 35%;
+    margin-left: 3%;
+    margin-top: 3.5%;
+    padding: 1% 2%;
+    transform: rotate(-0.8deg);
+}
+
+#contact .content p, #sjc .content p {
+    text-align: left;
+    line-height: 1.5em;
+    margin-top: 4%;
+    font-size: 250%;
+}
+
+#photo .content p, #contact .content p span, #sjc .content-wrapper .content p {
+    font-family: calibri;
+}
+
+#contact ul li, #sjc ul li {
+    font-size: 250%;
+    margin-top: 0.2%;
+    line-height: 1.5em;
+}
+
+#contact ul li.mail {
+    background-image: url('./images/icons/coordonnees_mail.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 5.5% 45.5%;
+    padding-left: 7%;
+}
+
+#contact ul li.phone {
+    background-image: url('./images/icons/coordonnees_phone.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 4% 100%;
+    padding-left: 6%;
+    margin-left: 0.75%;
+}
+
+#contact ul li.address {
+    margin-left: 3%;
+}
+
+#sjc ul li.address {
+     margin-left: 8%;
+ }
+/* To be tested : viewheight port */
+/*
+#le-jour-j article, #reponse article {
+    width: 179.78vh;
+    height: 100vh;
+}
+*/
+/* Comment to debug */
+
+/*nav {
+    left: -350px;
+}
+*/
+/* Removing the ugly jquery mobile css effect */ 
+body .ui-page-theme-a a, html body .ui-bar-a a, html body .ui-body-a a, html body ,nav .ui-group-theme-a a {
+    color: white;
+    font-weight: normal;
+}
+
+body .ui-page-theme-a a:hover, html body .ui-bar-a a:hover, html body .ui-body-a a:hover, html body nav .ui-group-theme-a a:hover {
+    color: rgb(89,89,89);
+}
+
+body .ui-overlay-a, body .ui-page-theme-a, body .ui-page-theme-a .ui-panel-wrapper {
+    text-shadow: none;
+}
+
+.ui-mobile body label, body div.ui-controlgroup-label {
+    font-weight: normal;
+    font-size: inherit;
+}
+
+.ui-mobile body label, body .ui-controlgroup-label{
+    display: inline-block;
+    margin: auto;
+}
+
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+    opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
+
+.slide-left-enter {
+    left: 100%;
+}
+
+.slide-left-enter.slide-left-enter-active {
+    left: 0%;
+    transition: left 400ms ease-in;
+}
+
+.slide-left-leave {
+    left: 0%;
+}
+
+.slide-left-leave.slide-left-leave-active {
+    left: -100%;
+    transition: left 400ms ease-in;
+}
+  
+.slide-right-enter {
+    left: -100%;
+}
+
+.slide-right-enter.slide-right-enter-active {
+    left: 0%;
+    transition: left 400ms ease-in;
+}
+
+.slide-right-leave {
+    left: 0%;
+}
+
+.slide-right-leave.slide-right-leave-active {
+    left: 100%;
+    transition: left 400ms ease-in;
+}
+  
